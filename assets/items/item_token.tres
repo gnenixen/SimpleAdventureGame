@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CResourceItem" load_steps=4 format=3 uid="uid://c0bsqcmxlynll"]
+
+[ext_resource type="Script" path="res://src/system/items/resource_item.gd" id="1_3atcy"]
+[ext_resource type="Texture2D" uid="uid://c0ujut2c4wab2" path="res://assets/images/items/img_token.PNG" id="1_c2ju1"]
+[ext_resource type="PackedScene" uid="uid://dhbtciy7svuew" path="res://assets/entities/items/ent_token.tscn" id="2_1peme"]
+
+[resource]
+script = ExtResource("1_3atcy")
+name = "Жетон"
+description = "Кусок металла с цифрой 14, выглядит бесполезно"
+type = 4
+icon = ExtResource("1_c2ju1")
+item_scene = ExtResource("2_1peme")
+func_script_file = "res://src/system/items/func_item.gd"

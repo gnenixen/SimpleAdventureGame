@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CResourceItem" load_steps=4 format=3 uid="uid://dxqwf78wunguo"]
+
+[ext_resource type="Script" path="res://src/system/items/resource_item.gd" id="1_7wbp1"]
+[ext_resource type="Texture2D" uid="uid://wy0jgnwcgu2m" path="res://assets/images/items/img_amulet.PNG" id="1_wffv2"]
+[ext_resource type="PackedScene" uid="uid://bxe0r55yrufak" path="res://assets/entities/items/ent_amulet.tscn" id="2_heh4m"]
+
+[resource]
+script = ExtResource("1_7wbp1")
+name = "Странный амулет"
+description = "Кажется я не должен надевать его..."
+type = 3
+icon = ExtResource("1_wffv2")
+item_scene = ExtResource("2_heh4m")
+func_script_file = "res://src/func_items/amulet.gd"

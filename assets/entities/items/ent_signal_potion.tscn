@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://l0u87n4fn7yh"]
+
+[ext_resource type="PackedScene" uid="uid://ch7ln1yhtoqkm" path="res://assets/entities/base/ent_pickable.tscn" id="1_3o0kc"]
+[ext_resource type="Texture2D" uid="uid://djvjaiyxqmb1i" path="res://assets/images/items/img_signal_potion.PNG" id="2_htnqu"]
+
+[node name="ent_signal_potion" instance=ExtResource("1_3o0kc")]
+type = 9
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -8)
+scale = Vector2(0.0234375, 0.0234375)
+texture = ExtResource("2_htnqu")

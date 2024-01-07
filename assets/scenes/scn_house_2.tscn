@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://caqxk38nyr5ha"]
+
+[ext_resource type="PackedScene" uid="uid://do1pe2iuj4usq" path="res://assets/scenes/scn_base.tscn" id="1_jow7j"]
+[ext_resource type="PackedScene" uid="uid://sa7e7lp2mlfd" path="res://assets/entities/ent_trigger_scene_change.tscn" id="2_86noc"]
+[ext_resource type="PackedScene" uid="uid://dhbtciy7svuew" path="res://assets/entities/items/ent_token.tscn" id="2_w0y1e"]
+[ext_resource type="PackedScene" uid="uid://dsgk20cp5klnf" path="res://assets/entities/items/ent_teleportation_potion.tscn" id="4_0yabc"]
+[ext_resource type="PackedScene" uid="uid://l0u87n4fn7yh" path="res://assets/entities/items/ent_signal_potion.tscn" id="5_qgi64"]
+[ext_resource type="PackedScene" uid="uid://bxe0r55yrufak" path="res://assets/entities/items/ent_amulet.tscn" id="6_l01k6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v75mi"]
+size = Vector2(226, 20)
+
+[node name="scn_house_2" instance=ExtResource("1_jow7j")]
+
+[node name="RandomTeleportationNavMesh" parent="LevelData" index="1"]
+visible = false
+
+[node name="ent_token" parent="Entities/Pickables" index="0" instance=ExtResource("2_w0y1e")]
+position = Vector2(272, 344)
+
+[node name="ent_teleportation_potion" parent="Entities/Pickables" index="1" instance=ExtResource("4_0yabc")]
+position = Vector2(440, 288)
+
+[node name="ent_signal_potion" parent="Entities/Pickables" index="2" instance=ExtResource("5_qgi64")]
+position = Vector2(704, 296)
+
+[node name="ent_amulet" parent="Entities/Pickables" index="3" instance=ExtResource("6_l01k6")]
+position = Vector2(904, 360)
+
+[node name="ent_trigger_scene_change" parent="Entities" index="2" instance=ExtResource("2_86noc")]
+position = Vector2(576, 640)
+scene_name = "street"
+player_spawn_position_id = "house_2_exit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/ent_trigger_scene_change" index="0"]
+shape = SubResource("RectangleShape2D_v75mi")
+
+[node name="PlayerSpawnPosition" parent="." index="2"]
+position = Vector2(576, 592)

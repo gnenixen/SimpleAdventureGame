@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bijoa203rnrn2"]
+
+[ext_resource type="PackedScene" uid="uid://2eu5rw33ookw" path="res://assets/entities/base/ent_interactable_object.tscn" id="1_geh4k"]
+
+[node name="ent_mailbox" instance=ExtResource("1_geh4k")]
+z_as_relative = false
+display_message = "Пустой почтовый ящик"
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -28)
+scale = Vector2(0.375, 0.4375)

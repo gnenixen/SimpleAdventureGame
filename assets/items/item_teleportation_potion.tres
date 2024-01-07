@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CResourceItem" load_steps=4 format=3 uid="uid://dn8v2fjfq2e1"]
+
+[ext_resource type="Script" path="res://src/system/items/resource_item.gd" id="1_83qr4"]
+[ext_resource type="Texture2D" uid="uid://ci1lrn6dotpjq" path="res://assets/images/items/img_teleportation_potion.PNG" id="1_yeehy"]
+[ext_resource type="PackedScene" uid="uid://dsgk20cp5klnf" path="res://assets/entities/items/ent_teleportation_potion.tscn" id="2_vl1sk"]
+
+[resource]
+script = ExtResource("1_83qr4")
+name = "Зелье телепортации"
+description = "Одна нога здесь, другая там.
+(Не реализовано)"
+type = 2
+icon = ExtResource("1_yeehy")
+item_scene = ExtResource("2_vl1sk")
+func_script_file = "res://src/func_items/teleportation_potion.gd"

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddve4hs6gdnob"]
+
+[ext_resource type="PackedScene" uid="uid://ch7ln1yhtoqkm" path="res://assets/entities/base/ent_pickable.tscn" id="1_0cyi1"]
+[ext_resource type="Texture2D" uid="uid://cmyf3xnmp40vc" path="res://assets/images/items/img_chilli_pepper.PNG" id="2_xkbw1"]
+
+[node name="ent_chili_pepper" instance=ExtResource("1_0cyi1")]
+type = 7
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-1.43051e-06, -8)
+scale = Vector2(0.0234375, 0.0234375)
+texture = ExtResource("2_xkbw1")

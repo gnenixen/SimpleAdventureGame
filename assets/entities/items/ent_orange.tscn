@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp46t4pknbp8w"]
+
+[ext_resource type="PackedScene" uid="uid://ch7ln1yhtoqkm" path="res://assets/entities/base/ent_pickable.tscn" id="1_rmtoo"]
+[ext_resource type="Texture2D" uid="uid://df4nehkruwsxm" path="res://assets/images/items/img_orange.PNG" id="2_nfoh4"]
+
+[node name="ent_orange" instance=ExtResource("1_rmtoo")]
+type = 6
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -8)
+scale = Vector2(0.0234375, 0.0234375)
+texture = ExtResource("2_nfoh4")

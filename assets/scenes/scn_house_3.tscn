@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://tmb3vu43623n"]
+
+[ext_resource type="PackedScene" uid="uid://do1pe2iuj4usq" path="res://assets/scenes/scn_base.tscn" id="1_jhucg"]
+[ext_resource type="PackedScene" uid="uid://sa7e7lp2mlfd" path="res://assets/entities/ent_trigger_scene_change.tscn" id="2_41sw3"]
+[ext_resource type="PackedScene" uid="uid://btxewvxntw0o4" path="res://assets/entities/items/ent_apple.tscn" id="3_6kwag"]
+[ext_resource type="PackedScene" uid="uid://ddve4hs6gdnob" path="res://assets/entities/items/ent_chili_pepper.tscn" id="4_r0mfl"]
+[ext_resource type="PackedScene" uid="uid://bxe0r55yrufak" path="res://assets/entities/items/ent_amulet.tscn" id="5_daty2"]
+[ext_resource type="PackedScene" uid="uid://d3ydckxfkbqwa" path="res://assets/entities/items/ent_olive.tscn" id="6_wyoig"]
+[ext_resource type="PackedScene" uid="uid://dp46t4pknbp8w" path="res://assets/entities/items/ent_orange.tscn" id="7_ac534"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysnve"]
+size = Vector2(226, 20)
+
+[node name="scn_house_3" instance=ExtResource("1_jhucg")]
+
+[node name="RandomTeleportationNavMesh" parent="LevelData" index="1"]
+visible = false
+
+[node name="ent_apple" parent="Entities/Pickables" index="0" instance=ExtResource("3_6kwag")]
+position = Vector2(192, 136)
+
+[node name="ent_apple2" parent="Entities/Pickables" index="1" instance=ExtResource("3_6kwag")]
+position = Vector2(200, 192)
+
+[node name="ent_apple3" parent="Entities/Pickables" index="2" instance=ExtResource("3_6kwag")]
+position = Vector2(200, 240)
+
+[node name="ent_apple4" parent="Entities/Pickables" index="3" instance=ExtResource("3_6kwag")]
+position = Vector2(200, 296)
+
+[node name="ent_apple5" parent="Entities/Pickables" index="4" instance=ExtResource("3_6kwag")]
+position = Vector2(200, 336)
+
+[node name="ent_apple6" parent="Entities/Pickables" index="5" instance=ExtResource("3_6kwag")]
+position = Vector2(200, 376)
+
+[node name="ent_chili_pepper" parent="Entities/Pickables" index="6" instance=ExtResource("4_r0mfl")]
+position = Vector2(304, 136)
+
+[node name="ent_chili_pepper2" parent="Entities/Pickables" index="7" instance=ExtResource("4_r0mfl")]
+position = Vector2(304, 200)
+
+[node name="ent_chili_pepper3" parent="Entities/Pickables" index="8" instance=ExtResource("4_r0mfl")]
+position = Vector2(304, 248)
+
+[node name="ent_chili_pepper4" parent="Entities/Pickables" index="9" instance=ExtResource("4_r0mfl")]
+position = Vector2(304, 296)
+
+[node name="ent_chili_pepper5" parent="Entities/Pickables" index="10" instance=ExtResource("4_r0mfl")]
+position = Vector2(312, 336)
+
+[node name="ent_chili_pepper6" parent="Entities/Pickables" index="11" instance=ExtResource("4_r0mfl")]
+position = Vector2(312, 376)
+
+[node name="ent_amulet" parent="Entities/Pickables" index="12" instance=ExtResource("5_daty2")]
+position = Vector2(464, 120)
+
+[node name="ent_olive" parent="Entities/Pickables" index="13" instance=ExtResource("6_wyoig")]
+position = Vector2(632, 112)
+
+[node name="ent_olive2" parent="Entities/Pickables" index="14" instance=ExtResource("6_wyoig")]
+position = Vector2(632, 160)
+
+[node name="ent_olive3" parent="Entities/Pickables" index="15" instance=ExtResource("6_wyoig")]
+position = Vector2(632, 200)
+
+[node name="ent_orange" parent="Entities/Pickables" index="16" instance=ExtResource("7_ac534")]
+position = Vector2(744, 112)
+
+[node name="ent_orange2" parent="Entities/Pickables" index="17" instance=ExtResource("7_ac534")]
+position = Vector2(736, 176)
+
+[node name="ent_orange3" parent="Entities/Pickables" index="18" instance=ExtResource("7_ac534")]
+position = Vector2(736, 232)
+
+[node name="ent_orange4" parent="Entities/Pickables" index="19" instance=ExtResource("7_ac534")]
+position = Vector2(736, 280)
+
+[node name="ent_trigger_scene_change" parent="Entities" index="2" instance=ExtResource("2_41sw3")]
+position = Vector2(576, 640)
+scene_name = "street"
+player_spawn_position_id = "house_3_exit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/ent_trigger_scene_change" index="0"]
+shape = SubResource("RectangleShape2D_ysnve")
+
+[node name="PlayerSpawnPosition" parent="." index="2"]
+position = Vector2(576, 592)

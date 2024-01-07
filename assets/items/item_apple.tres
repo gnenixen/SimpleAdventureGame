@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CResourceItem" load_steps=4 format=3 uid="uid://d1pdgw3ftkeb6"]
+
+[ext_resource type="Script" path="res://src/system/items/resource_item.gd" id="1_du8mp"]
+[ext_resource type="Texture2D" uid="uid://ku6q4wrmehr2" path="res://assets/images/items/img_apple.PNG" id="1_nk184"]
+[ext_resource type="PackedScene" uid="uid://btxewvxntw0o4" path="res://assets/entities/items/ent_apple.tscn" id="2_uvo5f"]
+
+[resource]
+script = ExtResource("1_du8mp")
+name = "Яблоко"
+description = "Сочное зел>ное яблоко, здоровая еда"
+type = 5
+icon = ExtResource("1_nk184")
+item_scene = ExtResource("2_uvo5f")
+func_script_file = "res://src/func_items/apple.gd"

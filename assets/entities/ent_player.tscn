@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://xbu6m6sml6vm"]
+
+[ext_resource type="Script" path="res://src/entities/player.gd" id="1_uqx00"]
+[ext_resource type="Texture2D" uid="uid://hi87y10ksjod" path="res://assets/images/player/img_player_front.PNG" id="2_60sx5"]
+[ext_resource type="Texture2D" uid="uid://28cwknojgx3b" path="res://assets/images/player/img_player_back.PNG" id="3_2sa4i"]
+[ext_resource type="Texture2D" uid="uid://dn4x48nng2wi3" path="res://assets/images/player/img_player_side.PNG" id="4_lk2b6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gst65"]
+size = Vector2(32, 32)
+
+[node name="ent_player" type="CharacterBody2D" node_paths=PackedStringArray("interactable_object_raycast", "visual_sprite")]
+y_sort_enabled = true
+motion_mode = 1
+script = ExtResource("1_uqx00")
+hp = 3
+interactable_object_raycast = NodePath("InteractableObjectRaycast")
+visual_sprite = NodePath("Sprite2D")
+visual_texture_front = ExtResource("2_60sx5")
+visual_texture_back = ExtResource("3_2sa4i")
+visual_texture_side = ExtResource("4_lk2b6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(2.08165e-12, -41)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("2_60sx5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_gst65")
+
+[node name="InteractableObjectRaycast" type="RayCast2D" parent="."]
+position = Vector2(0, -32)
+target_position = Vector2(2.08165e-12, 40)
+
+[node name="Camera2D" type="Camera2D" parent="."]

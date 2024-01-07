@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://do1pe2iuj4usq"]
+
+[ext_resource type="Script" path="res://src/system/level.gd" id="1_h370n"]
+[ext_resource type="Texture2D" uid="uid://dvtp1sj0bi250" path="res://assets/images/scenes/img_floor_wood.PNG" id="2_21pkr"]
+[ext_resource type="Script" path="res://src/system/player_spawn_position.gd" id="2_rdynj"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qfrqg"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_of33u"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g54bg"]
+normal = Vector2(1, 0)
+distance = -1152.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yttf5"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_c5csv"]
+vertices = PackedVector2Array(1142, 638, 10, 638, 10, 10, 1142, 10)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1152, 0, 0, 0, 0, 648, 1152, 648)])
+parsed_geometry_type = 1
+source_geometry_mode = 1
+source_geometry_group_name = &"navigation_blocker"
+
+[node name="scn_base" type="Node2D" node_paths=PackedStringArray("player_spawn_position", "random_teleportation_navmesh", "pickables_root_node")]
+process_mode = 1
+script = ExtResource("1_h370n")
+player_spawn_position = NodePath("PlayerSpawnPosition")
+random_teleportation_navmesh = NodePath("LevelData/RandomTeleportationNavMesh")
+pickables_root_node = NodePath("Entities/Pickables")
+
+[node name="LevelData" type="Node2D" parent="."]
+
+[node name="Floor" type="Sprite2D" parent="LevelData"]
+modulate = Color(0.662745, 0.662745, 0.662745, 1)
+texture_repeat = 2
+position = Vector2(576, 324)
+scale = Vector2(0.5625, 0.316406)
+texture = ExtResource("2_21pkr")
+
+[node name="Floor2" type="Sprite2D" parent="LevelData"]
+modulate = Color(0.180392, 0.0823529, 0, 1)
+texture_repeat = 2
+position = Vector2(576, -96)
+scale = Vector2(0.5625, 0.09375)
+texture = ExtResource("2_21pkr")
+
+[node name="LevelBounds" type="StaticBody2D" parent="LevelData"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelData/LevelBounds"]
+position = Vector2(576, 0)
+shape = SubResource("WorldBoundaryShape2D_qfrqg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="LevelData/LevelBounds"]
+position = Vector2(1152, 320)
+shape = SubResource("WorldBoundaryShape2D_of33u")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="LevelData/LevelBounds"]
+position = Vector2(1152, 320)
+shape = SubResource("WorldBoundaryShape2D_g54bg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LevelData/LevelBounds"]
+position = Vector2(576, 648)
+shape = SubResource("WorldBoundaryShape2D_yttf5")
+
+[node name="RandomTeleportationNavMesh" type="NavigationRegion2D" parent="LevelData"]
+editor_description = "Used by teleportation potion to pick random position where player teleportation is safe"
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_c5csv")
+
+[node name="Entities" type="Node2D" parent="."]
+
+[node name="Interactables" type="Node2D" parent="Entities"]
+
+[node name="Pickables" type="Node2D" parent="Entities"]
+
+[node name="PlayerSpawnPosition" type="Marker2D" parent="."]
+position = Vector2(576, 320)
+script = ExtResource("2_rdynj")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://sa7e7lp2mlfd"]
+
+[ext_resource type="Script" path="res://src/entities/trigger_scene_change.gd" id="1_jyjkl"]
+
+[node name="ent_trigger_scene_change" type="Area2D"]
+script = ExtResource("1_jyjkl")
+metadata/_edit_group_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

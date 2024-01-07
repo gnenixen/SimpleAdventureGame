@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://cywnoes4kebe1"]
+
+[ext_resource type="PackedScene" uid="uid://do1pe2iuj4usq" path="res://assets/scenes/scn_base.tscn" id="1_bimfx"]
+[ext_resource type="PackedScene" uid="uid://sa7e7lp2mlfd" path="res://assets/entities/ent_trigger_scene_change.tscn" id="2_doihi"]
+[ext_resource type="PackedScene" uid="uid://btxewvxntw0o4" path="res://assets/entities/items/ent_apple.tscn" id="2_xfuj5"]
+[ext_resource type="PackedScene" uid="uid://d3ydckxfkbqwa" path="res://assets/entities/items/ent_olive.tscn" id="3_i88ys"]
+[ext_resource type="PackedScene" uid="uid://dp46t4pknbp8w" path="res://assets/entities/items/ent_orange.tscn" id="4_phms3"]
+[ext_resource type="PackedScene" uid="uid://ddve4hs6gdnob" path="res://assets/entities/items/ent_chili_pepper.tscn" id="6_cdfvk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6ydr"]
+size = Vector2(226, 20)
+
+[node name="scn_house_1" instance=ExtResource("1_bimfx")]
+
+[node name="RandomTeleportationNavMesh" parent="LevelData" index="1"]
+visible = false
+
+[node name="ent_apple" parent="Entities/Pickables" index="0" instance=ExtResource("2_xfuj5")]
+position = Vector2(200, 224)
+
+[node name="ent_olive" parent="Entities/Pickables" index="1" instance=ExtResource("3_i88ys")]
+position = Vector2(424, 208)
+
+[node name="ent_orange" parent="Entities/Pickables" index="2" instance=ExtResource("4_phms3")]
+position = Vector2(632, 208)
+
+[node name="ent_chili_pepper" parent="Entities/Pickables" index="3" instance=ExtResource("6_cdfvk")]
+position = Vector2(856, 232)
+
+[node name="ent_trigger_scene_change" parent="Entities" index="2" instance=ExtResource("2_doihi")]
+position = Vector2(576, 640)
+scene_name = "street"
+player_spawn_position_id = "house_1_exit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/ent_trigger_scene_change" index="0"]
+shape = SubResource("RectangleShape2D_w6ydr")
+
+[node name="PlayerSpawnPosition" parent="." index="2"]
+position = Vector2(576, 600)

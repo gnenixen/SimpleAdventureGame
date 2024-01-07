@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://btxewvxntw0o4"]
+
+[ext_resource type="PackedScene" uid="uid://ch7ln1yhtoqkm" path="res://assets/entities/base/ent_pickable.tscn" id="1_26of4"]
+[ext_resource type="Texture2D" uid="uid://ku6q4wrmehr2" path="res://assets/images/items/img_apple.PNG" id="2_ri1xt"]
+
+[node name="ent_apple" instance=ExtResource("1_26of4")]
+type = 5
+
+[node name="Sprite2D" parent="." index="0"]
+modulate = Color(0.286275, 0.560784, 0, 1)
+position = Vector2(4.76837e-07, -8)
+scale = Vector2(0.0234375, 0.0234375)
+texture = ExtResource("2_ri1xt")

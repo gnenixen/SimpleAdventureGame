@@ -1,0 +1,132 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8sfm7mantqvi"]
+
+[ext_resource type="Script" path="res://src/gui/gui_main.gd" id="1_nitp7"]
+
+[sub_resource type="Animation" id="Animation_trhx0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractableObjectMessagePanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iqk6o"]
+resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractableObjectMessagePanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o11wt"]
+_data = {
+"RESET": SubResource("Animation_trhx0"),
+"show": SubResource("Animation_iqk6o")
+}
+
+[node name="gui_main" type="Control" node_paths=PackedStringArray("stats_hp_stats_label", "stats_keys_stats_label", "interactable_object_stats_label", "interactable_object_animator", "interactable_object_display_timer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nitp7")
+stats_hp_stats_label = NodePath("Stats/Stats/HP/Stats")
+stats_keys_stats_label = NodePath("Stats/Stats/Keys/Stats")
+interactable_object_stats_label = NodePath("InteractableObjectMessagePanel/Message")
+interactable_object_animator = NodePath("InteractableObjectMessagePanel/AnimationPlayer")
+interactable_object_display_timer = NodePath("InteractableObjectMessagePanel/Timer")
+metadata/_edit_use_anchors_ = true
+
+[node name="Stats" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0138889
+anchor_top = 0.0246914
+anchor_right = 0.180556
+anchor_bottom = 0.111111
+metadata/_edit_use_anchors_ = true
+
+[node name="Stats" type="VBoxContainer" parent="Stats"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0416667
+anchor_right = 0.958333
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HP" type="HBoxContainer" parent="Stats/Stats"]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="Stats/Stats/HP"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "HP"
+
+[node name="Stats" type="Label" parent="Stats/Stats/HP"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "CURRENT/MAX"
+
+[node name="Keys" type="HBoxContainer" parent="Stats/Stats"]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="Stats/Stats/Keys"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Ключи"
+
+[node name="Stats" type="Label" parent="Stats/Stats/Keys"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "COUNT"
+
+[node name="InteractableObjectMessagePanel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.222222
+anchor_top = 0.91358
+anchor_right = 0.777778
+anchor_bottom = 0.987654
+metadata/_edit_use_anchors_ = true
+
+[node name="Message" type="Label" parent="InteractableObjectMessagePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0125
+anchor_top = 0.166667
+anchor_right = 0.9875
+anchor_bottom = 0.833333
+grow_horizontal = 2
+grow_vertical = 2
+text = "INTERACTIVE_OBJECT_MESSAGE_PLACEHOLDER"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InteractableObjectMessagePanel"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_o11wt")
+}
+
+[node name="Timer" type="Timer" parent="InteractableObjectMessagePanel"]
+wait_time = 3.0

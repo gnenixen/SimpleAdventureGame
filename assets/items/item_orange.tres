@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CResourceItem" load_steps=4 format=3 uid="uid://bw8c7jgxq3ddw"]
+
+[ext_resource type="Script" path="res://src/system/items/resource_item.gd" id="1_euv01"]
+[ext_resource type="Texture2D" uid="uid://df4nehkruwsxm" path="res://assets/images/items/img_orange.PNG" id="1_syfry"]
+[ext_resource type="PackedScene" uid="uid://dp46t4pknbp8w" path="res://assets/entities/items/ent_orange.tscn" id="2_mtryp"]
+
+[resource]
+script = ExtResource("1_euv01")
+name = "Апельсин"
+description = "Жизнь без цинги - хорошая жизнь"
+type = 6
+icon = ExtResource("1_syfry")
+item_scene = ExtResource("2_mtryp")
+func_script_file = "res://src/func_items/orange.gd"

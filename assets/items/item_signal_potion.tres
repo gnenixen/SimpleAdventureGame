@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CResourceItem" load_steps=4 format=3 uid="uid://cvq2wq0jm3337"]
+
+[ext_resource type="Texture2D" uid="uid://djvjaiyxqmb1i" path="res://assets/images/items/img_signal_potion.PNG" id="1_ndig5"]
+[ext_resource type="Script" path="res://src/system/items/resource_item.gd" id="1_tt04j"]
+[ext_resource type="PackedScene" uid="uid://l0u87n4fn7yh" path="res://assets/entities/items/ent_signal_potion.tscn" id="2_pqsmu"]
+
+[resource]
+script = ExtResource("1_tt04j")
+name = "Сигнальное зелье"
+description = "Если это выпить все в городе узнают где я"
+type = 9
+icon = ExtResource("1_ndig5")
+item_scene = ExtResource("2_pqsmu")
+func_script_file = "res://src/func_items/signal_potion.gd"

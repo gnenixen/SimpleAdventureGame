@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://binfpsxkwdils"]
+
+[ext_resource type="Script" path="res://src/gui/gui_storage.gd" id="1_dnvro"]
+[ext_resource type="PackedScene" uid="uid://b7rfq7dw3ca54" path="res://assets/gui/guicmp_storage_item.tscn" id="2_w64rb"]
+
+[node name="gui_storage" type="Control" node_paths=PackedStringArray("items_grid", "item_name", "item_description", "item_actions_containter")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dnvro")
+guicmp_storage_item_packed_scene = ExtResource("2_w64rb")
+items_grid = NodePath("Panel/VBoxContainer/ItemsGrid")
+item_name = NodePath("Panel/VBoxContainer/HBoxContainer/VBoxContainer/ItemName")
+item_description = NodePath("Panel/VBoxContainer/HBoxContainer/VBoxContainer/ItemDescription")
+item_actions_containter = NodePath("Panel/VBoxContainer/HBoxContainer/ItemAtionsContainter")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemsGrid" type="GridContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+columns = 8
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="ItemName" type="Label" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "ITEM_NAME"
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ItemDescription" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "ITEM_DESCRIPTION"
+
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ItemAtionsContainter" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

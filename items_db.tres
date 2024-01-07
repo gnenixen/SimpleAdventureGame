@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CItemsDB" load_steps=12 format=3 uid="uid://weftwlitnyxc"]
+
+[ext_resource type="Resource" uid="uid://8mthwxexgdyy" path="res://assets/items/item_none.tres" id="1_a1r2y"]
+[ext_resource type="Resource" uid="uid://bkneu2qiqjsa5" path="res://assets/items/item_key.tres" id="2_bw574"]
+[ext_resource type="Script" path="res://src/system/items/items_db.gd" id="3_n47d5"]
+[ext_resource type="Resource" uid="uid://d1pdgw3ftkeb6" path="res://assets/items/item_apple.tres" id="3_vdnn1"]
+[ext_resource type="Resource" uid="uid://da5fymtxlrsbh" path="res://assets/items/item_olive.tres" id="4_paaok"]
+[ext_resource type="Resource" uid="uid://cd6sqxd5vkvn7" path="res://assets/items/item_chili_pepper.tres" id="5_enipp"]
+[ext_resource type="Resource" uid="uid://c0bsqcmxlynll" path="res://assets/items/item_token.tres" id="6_ygm1j"]
+[ext_resource type="Resource" uid="uid://bw8c7jgxq3ddw" path="res://assets/items/item_orange.tres" id="7_ugl3n"]
+[ext_resource type="Resource" uid="uid://dxqwf78wunguo" path="res://assets/items/item_amulet.tres" id="8_8epjg"]
+[ext_resource type="Resource" uid="uid://dn8v2fjfq2e1" path="res://assets/items/item_teleportation_potion.tres" id="9_n1qd4"]
+[ext_resource type="Resource" uid="uid://cvq2wq0jm3337" path="res://assets/items/item_signal_potion.tres" id="10_gttud"]
+
+[resource]
+script = ExtResource("3_n47d5")
+items = Array[Resource("res://src/system/items/resource_item.gd")]([ExtResource("1_a1r2y"), ExtResource("2_bw574"), ExtResource("3_vdnn1"), ExtResource("4_paaok"), ExtResource("5_enipp"), ExtResource("6_ygm1j"), ExtResource("7_ugl3n"), ExtResource("8_8epjg"), ExtResource("9_n1qd4"), ExtResource("10_gttud")])

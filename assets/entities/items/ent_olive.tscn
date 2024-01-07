@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3ydckxfkbqwa"]
+
+[ext_resource type="PackedScene" uid="uid://ch7ln1yhtoqkm" path="res://assets/entities/base/ent_pickable.tscn" id="1_8lbiy"]
+[ext_resource type="Texture2D" uid="uid://cvsonf7q77ics" path="res://assets/images/items/img_olive.PNG" id="2_mpnwm"]
+
+[node name="ent_olive" instance=ExtResource("1_8lbiy")]
+type = 8
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -8)
+scale = Vector2(0.0234375, 0.0234375)
+texture = ExtResource("2_mpnwm")

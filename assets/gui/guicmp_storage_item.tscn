@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7rfq7dw3ca54"]
+
+[ext_resource type="Script" path="res://src/gui/guicmp_storage_item.gd" id="1_miuyy"]
+[ext_resource type="Texture2D" uid="uid://4lfgltml3aoh" path="res://assets/images/gui/img_gui_item_border.PNG" id="2_ahn7f"]
+
+[node name="guicmp_sotrage_item" type="Control" node_paths=PackedStringArray("icon")]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchor_right = 0.111111
+anchor_bottom = 0.197531
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+script = ExtResource("1_miuyy")
+icon = NodePath("ItemIcon")
+metadata/_edit_use_anchors_ = true
+
+[node name="Border" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2_ahn7f")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemIcon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 0.999999
+offset_right = -201.778
+offset_bottom = -190.716
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
